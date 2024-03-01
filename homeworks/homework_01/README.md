@@ -12,17 +12,12 @@ Notes contains Text Note and Tags for each note.
 - Add email
 - Add address
 - Add birthday
-
 - Get person by query (searching in all fields)
 - Paginated iterator for Contacts Book (realized but not implemented)
-
 - Add text note
 - Add tags to note
-
 - Find notes by query
-
 - Colored table output
-
 - Save data to file
 
 ## Files
