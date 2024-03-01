@@ -62,7 +62,7 @@ class Bot:
                     print(respond)
 
 
-Bot().start()
+
 
 
                         # {
