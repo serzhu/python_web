@@ -1,7 +1,7 @@
 # Console Bot / Personal Assistant
 
-This application give you ability to use prepared classes for making Contacts Book and Notes with ability to manipulate with rows of book and notes.
-Contacts Book contains Contact Name, Phones, Email, Address and Birthday information.
+This application give you ability to use prepared classes for making Contacts Book and Notes with ability to manipulate with rows of book and notes.\n
+Contacts Book contains Contact Name, Phones, Email, Address and Birthday information.\n
 Notes contains Text Note and Tags for each note. 
 
 ## Features
