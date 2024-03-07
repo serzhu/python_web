@@ -1,0 +1,2 @@
+[console_scripts]
+console_bot = homeworks.homework01.main

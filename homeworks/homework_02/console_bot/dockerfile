@@ -1,0 +1,18 @@
+
+FROM python:3.12.0-slim
+
+ENV APP_HOME /console_bot
+
+WORKDIR $APP_HOME
+
+RUN pip install poetry
+
+COPY pyproject.toml  $APP_HOME/pyproject.toml
+COPY poetry.lock $APP_HOME/poetry.lock
+COPY start.py $APP_HOME/start.py
+COPY README.md $APP_HOME/README.md
+COPY console_bot/ $APP_HOME/console_bot
+
+RUN poetry config virtualenvs.create false && poetry install
+
+ENTRYPOINT ["python", "start.py"]

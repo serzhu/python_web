@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "console_bot"
+version = "0.1.0"
+description = ""
+authors = ["serzhu <serhii.zhu@ukr.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "3.12"
+requests = "2.31.0"
+
+[tool.poetry.scripts]
+console_bot = "console_bot.main:start"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

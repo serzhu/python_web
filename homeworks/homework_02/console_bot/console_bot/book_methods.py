@@ -1,9 +1,9 @@
 import pickle
 from collections import UserDict
 from pathlib import Path
-from record import Record
-from iterators import Iterator
-from format import HEADER_BOOK
+from .record import Record
+from .iterators import Iterator
+from .format import HEADER_BOOK
 
 
 class AddressBook(UserDict):
@@ -11,6 +11,7 @@ class AddressBook(UserDict):
         super().__init__()
         p = Path(__file__)
         self.filename = p.parent / 'Data' / 'book.pkl'
+        #self.filename = "Data\\book.pkl"
 
     def serialize(self):
         with open(self.filename, "wb") as file:
@@ -19,8 +20,8 @@ class AddressBook(UserDict):
     def deserialize(self):
         try:
             with open(self.filename, "rb") as file:
-                notes = pickle.load(file)
-            return notes
+                book = pickle.load(file)
+            return book
         except FileNotFoundError:
             return self
 

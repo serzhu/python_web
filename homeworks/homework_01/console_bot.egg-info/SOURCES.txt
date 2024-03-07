@@ -1,0 +1,7 @@
+README.md
+setup.py
+console_bot.egg-info/PKG-INFO
+console_bot.egg-info/SOURCES.txt
+console_bot.egg-info/dependency_links.txt
+console_bot.egg-info/entry_points.txt
+console_bot.egg-info/top_level.txt

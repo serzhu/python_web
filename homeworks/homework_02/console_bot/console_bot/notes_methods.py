@@ -2,21 +2,22 @@ import copy
 import pickle
 from collections import UserDict
 from pathlib import Path
-from note import Note
-from iterators import Iterator
-from output import NotesFindOutputInfo
-from format import HEADER_NOTE
+from .note import Note
+from .iterators import Iterator
+from .output import NotesFindOutputInfo
+from .format import HEADER_NOTE
 
                 
 class Notes(UserDict):
     def __init__(self):
         super().__init__()
         p = Path(__file__)
-        print(p, p.parent)
+        Path(p.parent / 'Data').mkdir(parents=True, exist_ok=True)
         self.filename = p.parent / 'Data' / 'notes.pkl'
+        #self.filename = "Data\\notes.pkl"
+
 
     def serialize(self):
-        print(self.filename)
         with open(self.filename, "wb") as file:
             pickle.dump(self, file)
 

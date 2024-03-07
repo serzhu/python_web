@@ -1,0 +1,10 @@
+
+FROM python:3.12.0-slim
+
+ENV APP_HOME /console_bot
+
+WORKDIR $APP_HOME
+
+COPY dist/console_bot-0.1.0.tar.gz  $APP_HOME/console_bot-0.1.0.tar.gz
+
+RUN pip install console_bot-0.1.0.tar.gz
