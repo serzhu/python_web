@@ -32,7 +32,7 @@ def factorize_map(number: int):
 
 if __name__ == "__main__":    
     
-    numbers = [1065100, 2065101, 3065102, 4065103, 1065104, 2065105, 3065106, 4065107, 1065100, 2065101, 3065102, 4065103, 1065104, 2065105, 3065106, 4065107]
+    numbers = [11065100, 2065101, 13065102, 4065103, 11065104, 2065105, 13065106, 4065107, 11065100, 2065101, 13065102, 4065103, 11065104, 2065105, 13065106, 4065107]
 
     start = time()
     f = factorize_sync(numbers)
@@ -41,7 +41,7 @@ if __name__ == "__main__":
     logging.debug(f'Time of calculations: {round(end - start, 2)}')
 
     print("-"*20+'\n')
-    sleep(1)
+    sleep(5)
 
     process = []
     semaphore = Semaphore(cpu_count())
@@ -55,7 +55,7 @@ if __name__ == "__main__":
     logging.debug(f'Time of calculations: {round(end - start, 2)}')
     
     print("-"*20+'\n')
-    sleep(1)
+    sleep(5)
     
     process = []
     start = time()
