@@ -1,0 +1,37 @@
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 29.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=29.03.2024
+Task 30.03.2024 received data from URL
+Task 29.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 28.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=28.03.2024
+Task 29.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=29.03.2024
+Task 29.03.2024 received data from URL
+Task 30.03.2024 received data from URL
+Task 28.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
+Starting get exchange rates
+Task 30.03.2024 getting URL: https://api.privatbank.ua/p24api/exchange_rates?json&date=30.03.2024
+Task 30.03.2024 received data from URL
+Finishing get exchange rates
