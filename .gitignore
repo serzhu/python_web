@@ -1,4 +1,3 @@
+.vscode
+python_web.code-workspace
 __pycache__
-/.vscode
-/log.txt
-/python_web.code-workspace
