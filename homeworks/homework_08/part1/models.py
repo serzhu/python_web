@@ -1,5 +1,5 @@
 from mongoengine import  Document
-from mongoengine.fields import ReferenceField, ListField, StringField
+from mongoengine.fields import ReferenceField, StringField
 
 class Author(Document):
     fullname = StringField()
@@ -10,5 +10,9 @@ class Author(Document):
 class Quote(Document):
     author = ReferenceField(Author)
     quote = StringField()
-    tags = ListField()
+    meta = {'allow_inheritance': True}
+
+class Tag(Document):
+    quote = ReferenceField(Quote)
+    tag = StringField()
     meta = {'allow_inheritance': True}

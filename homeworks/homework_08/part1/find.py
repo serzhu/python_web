@@ -1,26 +1,27 @@
 import connect 
 import redis
 from redis_lru import RedisLRU
-from models import Author, Quote
+from models import Author, Quote, Tag
 import timeit
 
 client = redis.StrictRedis(host="localhost", port=6379, password=None)
 cache = RedisLRU(client)
 
 @cache
-def find_author(author_names: list) -> list:
-    quotes = []
-    for name in author_names:
-        authors = Author.objects(fullname__iregex=name)
-        quotes.extend(Quote.objects(author__in=authors))
+def find_author(author_name: str) -> list:
+    a = Author.objects(fullname__iregex=author_name)
+    quotes = Quote.objects(author__in=a)
     return [(f'{quote.author.fullname}: {quote.quote}') for quote in quotes]
 
 @cache
+def find_tag(tag: str) -> list:
+    t = Tag.objects(tag__iregex=tag)
+    return [(f'{tag.tag}: {tag.quote.quote}') for tag in t]
+
+@cache
 def find_tags(tags: list) -> list:
-    quotes = []
-    for tag in tags:
-        quotes.extend(Quote.objects(tags__iexact=tag))
-    return [(f'{quote.tags}: {quote.quote}') for quote in quotes]
+    t = Tag.objects(tag__in=tags)
+    return [(f'{tag.tag}: {tag.quote.quote}') for tag in t]
 
 if __name__ == '__main__':
     while True:
@@ -30,10 +31,13 @@ if __name__ == '__main__':
         command, params = map(str.strip, query.split(':'))
         if command == 'name':
             start_time = timeit.default_timer()
-            quotes = find_author(params.split(','))
+            quotes = find_author(params.split(',')[0])
             print(f'Duration: {timeit.default_timer() - start_time}')
-
-        elif command in {'tag', 'tags'}:
+        elif command == 'tag':
+            start_time = timeit.default_timer()
+            quotes = find_tag(params.split(',')[0])
+            print(f'Duration: {timeit.default_timer() - start_time}')
+        elif command == 'tags':
             start_time = timeit.default_timer()
             quotes = find_tags(params.split(','))
             print(f'Duration: {timeit.default_timer() - start_time}')

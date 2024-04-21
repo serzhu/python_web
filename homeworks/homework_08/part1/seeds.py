@@ -1,7 +1,7 @@
 import json
 from pathlib import Path
 import connect
-from models import Author, Quote
+from models import Author, Quote, Tag
 
 p = Path(__file__)
 
@@ -16,8 +16,12 @@ for item in authors_list:
     a.save()
     for quote in quotes_list:
         if quote['author'] == item['fullname']:
-            q = Quote(tags = quote['tags'], quote = quote['quote'], author = a)
+            q = Quote(quote = quote['quote'], author = a)
             q.save()
+            for tag in quote['tags']:
+                t = Tag(quote = q, tag = tag)
+                t.save()
+
 
    
 
