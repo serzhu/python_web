@@ -1,3 +1,5 @@
+.gitignore
 .vscode
 python_web.code-workspace
 __pycache__
+parser_scrapy
