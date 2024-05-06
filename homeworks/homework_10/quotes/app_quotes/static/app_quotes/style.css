@@ -1,0 +1,54 @@
+.alert-error, .errorlist {
+    color: crimson;
+}
+
+.alert-success {
+    color: green;
+}
+
+.alert-info {
+    color: blue;
+}
+.right {
+    float: right;
+}
+
+.quote {
+    padding: 3px 3px;
+    border: 1px solid #0077ff;
+}
+
+.pager {
+    padding-left: 0;
+    margin: 22px 0;
+    list-style: none;
+    text-align: center;
+}
+
+.pager li {
+    display: inline;
+}
+.pager .previous>a, .pager .previous>span {
+    display: inline-block;
+    padding: 5px 14px;
+    float: right;
+}
+
+.pager .next>a, .pager .next>span {
+    display: inline-block;
+    padding: 5px 14px;
+    float: right;
+}
+
+/* .pager li>a, .pager li>span {
+    display: inline-block;
+    padding: 5px 14px;
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 15px;
+} */
+
+.disabled {
+    color: #333333;
+    cursor: not-allowed
+}

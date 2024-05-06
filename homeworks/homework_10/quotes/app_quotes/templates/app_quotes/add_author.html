@@ -1,0 +1,32 @@
+{% extends 'app_quotes/base.html' %}
+
+{% block content %}
+<div class="container">
+  {% if form.errors and form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+    {{form.non_field_errors}}
+  </div>
+  {% endif %}
+  <form action="{% url 'app_quotes:add_author' %}" method="POST">
+    <div class="mb-3">
+      <label for="fullname" class="form-label">Author fullname</label>
+      {{form.fullname}}
+      <span>{{form.errors.fullname}}</span>
+    </div>
+    <div class="mb-3">
+      <label for="born_date" class="form-label">Author born date</label>
+      {{form.born_date}}
+      <span>{{form.errors.born_date}}</span>
+    </div>
+    <div class="mb-3">
+      <label for="born_location" class="form-label">Author born location</label>
+      {{form.born_location}}
+    </div>
+    <div class="mb-3">
+      <label for="description" class="form-label">About</label>
+      {{form.description}}
+    </div>
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+{% endblock %}

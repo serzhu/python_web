@@ -1,0 +1,40 @@
+{% extends 'app_quotes/base.html' %}
+
+{% block content %}
+<div class="container">
+  {% if form.errors and form.non_field_errors %}
+  <div class="alert alert-danger" role="alert">
+    {{form.non_field_errors}}
+  </div>
+  {% endif %}
+
+  {% if messages %}
+  <ul class="messages">
+    {% for message in messages %}
+    <li{% if message.tags %} class="alert alert-{{ message.tags }}" {% endif %} role="alert">{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
+  <form action="{% url 'app_quotes:add_quote' %}" method="POST">
+    <div class="mb-3">
+      <label for="quote" class="form-label">Quote text</label>
+      {{form.quote}}
+      <span>{{form.errors.quote}}</span>
+    </div>
+    <div class="mb-3">
+      <label for="fullname" class="form-label">Author fullname</label>
+      {{form.author}}
+      <span>{{form.errors.author}}</span>
+    </div>
+    <div class="mb-3">
+      <label for="tags" class="form-label">Tags</label>
+      {{form.tags}}
+      <span>{{form.errors.tags}}</span>
+      <div id="tagslHelp" class="form-text">Few keywords divided by space.</div>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Add</button>
+  </form>
+</div>
+{% endblock %}
