@@ -36,7 +36,7 @@ def find_contact(find_str: str, db: Session = Depends(get_db)):
     return result
 
 @router.get("/next_days_birthdays/")
-def find_next_7days_birthdays(next_days: int, db: Session = Depends(get_db)):
+def find_next_days_birthdays(next_days: int, db: Session = Depends(get_db)):
     result = contacts.find_next_days_birthdays(next_days, db)
     if not len(result):
         raise HTTPException(
