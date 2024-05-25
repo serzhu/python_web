@@ -1,4 +1,4 @@
-# Console Bot / Personal Assistant
+# Contacts Storage
 
 This API gives abilities to different Users manage their contacts with a few  basic actions.<br />
 API provides basic mechanisms of authentication. <br />
