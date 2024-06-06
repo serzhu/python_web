@@ -1,0 +1,58 @@
+{% extends 'app_quotes/base.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Quotes List</h1>
+
+    <div class="border border-3">
+        <div class="container text-left">
+            <h2>Top Ten tags</h2>
+        </div>
+        <div class="container px-4 text-center">
+            <div class="row gx-3">
+                {% for tag in tags %}
+                <div class="col">
+                    <div class="p-1">
+                        <a class="tag" href="{% url 'app_quotes:quotes_by_tag' tag.id %}">{{tag}}</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="d-grid gap-2">
+        {% for quote in quotes %}
+        <div class="border border-3">
+            <span class="ms-2">{{quote.quote}}</span>
+            <span>by <small class="author">{{quote.author}}</small>
+                <a href="{% url 'app_quotes:author_info' quote.author.id %}">(about)</a>
+            </span>
+            <div class="ms-2">
+                Tags:
+                <meta class="keywords">
+                {% for tag in quote.tags.all %}
+                <a class="tag" href="{% url 'app_quotes:quotes_by_tag' tag.id %}">{{tag}}</a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <nav>
+        <ul class="pager">
+            <li class="next">
+                <a class="{% if not quotes.has_next %} disabled {% endif %}"
+                    href="{% if quotes.has_next %} {% url 'quotes:quotes_paginate' quotes.next_page_number %} {% else %} # {% endif %}">
+                    Next <span aria-hidden="true">→</span></a>
+            </li>
+            <li class="previous">
+                <a class="{% if not quotes.has_previous %} disabled {% endif %}"
+                    href="{% if quotes.has_previous %} {% url 'quotes:quotes_paginate' quotes.previous_page_number %} {% else %} # {% endif %}">
+                    <span aria-hidden="true">←</span> Previous</a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+{% endblock %}

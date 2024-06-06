@@ -1,0 +1,19 @@
+Content-Type: text/plain; charset="utf-8"
+MIME-Version: 1.0
+Content-Transfer-Encoding: 7bit
+Subject: Password reset on 127.0.0.1:8000
+From: serhii.zhukov@ukr.net
+To: serhii.zhukov@ukr.net
+Date: Thu, 06 Jun 2024 10:16:35 -0000
+Message-ID: <171766899588.13880.16646577153185041227@Fujitsu-laptop>
+
+
+
+You're receiving this email because you requested a password reset for your user account at 127.0.0.1:8000.
+
+Please go to the following page and choose a new password:
+http://127.0.0.1:8000/app_auth/reset/NQ/c87bjn-b972c91aeb4a24862bed04cc0ade17a9/
+
+Thanks for using our site!
+
+-------------------------------------------------------------------------------

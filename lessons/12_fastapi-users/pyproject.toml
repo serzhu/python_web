@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "homework-12-fastapi-users"
+version = "0.1.0"
+description = ""
+authors = ["serzhu <sergej_zhu@ukr.net>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+fastapi = "^0.111.0"
+fastapi-users = {extras = ["sqlalchemy"], version = "^13.0.0"}
+uvicorn = {extras = ["standard"], version = "^0.29.0"}
+aiosqlite = "^0.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

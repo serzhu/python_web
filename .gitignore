@@ -4,3 +4,6 @@
 python_web.code-workspace
 __pycache__
 parser_scrapy
+homework_12_fastapi_users
+config.ini
+postgres-data
