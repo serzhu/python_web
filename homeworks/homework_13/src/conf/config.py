@@ -1,6 +1,7 @@
-
+from pathlib import Path
 from pydantic_settings import BaseSettings
 from pydantic import ConfigDict, EmailStr
+
 
 class Settings(BaseSettings):
     pg_database_url: str
@@ -16,12 +17,12 @@ class Settings(BaseSettings):
     cloudinary_name: str
     cloudinary_api_key: str
     cloudinary_api_secret: str
-    
-    model_config = ConfigDict(extra='ignore', env_file=".env", env_file_encoding="utf-8")
 
-    # class Config:
-    #     env_file = ".env"
-    #     env_file_encoding = "utf-8"
+    model_config = ConfigDict(
+        extra="ignore",
+        env_file=Path(__file__).resolve().parents[2].joinpath(".env"),
+        env_file_encoding="utf-8",
+    )
 
 
 settings = Settings()
