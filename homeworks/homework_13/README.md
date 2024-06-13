@@ -1,16 +1,15 @@
-# Contacts Storage
+## Tests
 
-This API gives abilities to different Users manage their contacts with a few  basic actions.<br />
-API provides basic mechanisms of authentication. <br />
- 
-
-## Features
-
-- Register different users with roles ADMIN or USER
-- Each user with role USER can add, remove, update and find ONLY own contacts
-- Each contact may have name, surname, email, phone number, date of birth and add information
-- Finding mechanism look if name or surname or email containing string
-- Each contact can find contacts with birthday in set period
-- Users with role ADMIN can find all contacts of all users
-
-docker compose up -d  
+Added folder test with some tests:<br />
+- testing all functions in repository/users with unittest
+```bash
+python -m tests.tests_unit_repository_users <br />
+```
+- testing all functions in repository/contacts
+```bash
+python -m tests.tests_unit_repository_contacts <br />
+```
+- testing all functions in routes/contacts
+```bash
+python -m pytest ./tests/tests_route_contacts.py -v <br />
+```

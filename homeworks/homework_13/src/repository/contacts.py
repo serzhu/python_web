@@ -2,7 +2,7 @@ from sqlalchemy import select, or_
 from sqlalchemy.ext.asyncio import AsyncSession
 from sqlalchemy.sql import func
 from typing import List
-from datetime import date, timedelta
+from datetime import date, timedelta, datetime
 
 from src.database.models import Contact, User
 from src.schemas import ContactSchema
@@ -99,12 +99,13 @@ async def find_next_days_birthdays(
     """
     days_list = [
         (date.today() + timedelta(days=delta)).strftime("%m%d")
-        for delta in range(0, next_days)
+        for delta in range(next_days)
     ]
     query = (
         select(Contact)
         .filter_by(user=user)
-        .where(func.to_char(Contact.birthday, "MMDD").in_(days_list))
+        .where(func.strftime('%m%d', Contact.birthday).in_(days_list))
+        # .where(func.to_char(Contact.birthday, "MMDD").in_(days_list))
     )
     contacts = await db.execute(query)
     return contacts.scalars().all()
